@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./index.module.css";
 import { BiRectangle } from "react-icons/bi";
+import { BsArrowUpRight } from "react-icons/bs";
+
 import {
   FaRegCircle,
   FaSlash,
@@ -97,7 +99,7 @@ function Toolbar() {
           dispatch(activetoolActions.setActiveTool(TOOL_ITEMS.ARROW))
         }
       >
-        <FaArrowRight />
+        <BsArrowUpRight />
       </div>
 
       <div
