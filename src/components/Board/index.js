@@ -119,8 +119,6 @@ function Board() {
         case TOOL_ITEMS.CIRCLE:
           if (element.roughEle) {
             roughCanvas.draw(element.roughEle);
-          } else {
-            console.log("Rough element is not found in the object");
           }
           break;
         case TOOL_ITEMS.BRUSH:
