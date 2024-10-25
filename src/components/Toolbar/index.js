@@ -27,7 +27,9 @@ function Toolbar() {
   const onUndoClickHandler = () => {
     const historyArr = historyObj.history;
     const index = historyObj.index;
-    if (index <= 2) return; //mera phela element of history array is empty array. And pata nahi kyu ki mere history array me bina kuch kiye hi 2 more empty entries aa rahi hai. Issliye actually, board state index 3 se push hona start ho rahi hai. Ye issliye ho raha hai shyd, because mein history array me push karne ke liye useEffect ka use kar raha hu, jo ki initial render pe bhi run ho jayega and unncessary entry push kar dega in history array. Redux state me check kar lena History array ko, waha dikh jayega.
+    if (index <= 1) return; //mera phela element of history array is empty array. And pata nahi kyu ki mere history array me bina kuch kiye hi 2 more empty entries aa rahi hai. Issliye actually, board state index 3 se push hona start ho rahi hai. Ye issliye ho raha hai shyd, because mein history array me push karne ke liye useEffect ka use kar raha hu, jo ki initial render pe bhi run ho jayega and unncessary entry push kar dega in history array. Redux state me check kar lena History array ko, waha dikh jayega.
+
+    //In deployed project, useEffect runs once and in local host, it is running twice. So using index>=2 is safe
     dispatch(elementsAction.undoHandler(historyArr[index - 1]));
     dispatch(historyActions.updateIndex(index - 1));
   };
